@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ælab - Vad</title>
+<style>
+:root {
+  --bg: #0c1117;
+  --fg: #eaf6f5;
+  --panel: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.16);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(46,168,255,0.12), transparent 45%),
+    radial-gradient(circle at 80% 40%, rgba(29,211,176,0.12), transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(255,179,71,0.08), transparent 55%),
+    var(--bg);
+}
+
+.wrap {
+  width: min(760px, calc(100% - 2rem));
+  margin: 48px auto;
+}
+
+.back {
+  color: var(--fg);
+  text-decoration: none;
+  opacity: 0.8;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.back:hover { opacity: 1; }
+
+.card {
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: clamp(20px, 3vw, 34px);
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+}
+
+p {
+  margin: 0 0 14px;
+  line-height: 1.65;
+  opacity: 0.95;
+}
+
+p:last-child { margin-bottom: 0; }
+
+strong { font-weight: 600; }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="index.html">← Tillbaka</a>
+    <section class="card">
+      <h1>Vad</h1>
+
+      <p>För dig som fått ett visitkort från <strong>ælab</strong>.</p>
+
+      <p>Detta är en inbjudan till en pilot.</p>
+
+      <p>Inte för att behandla sjukdom.<br>
+      Utan för att förstå risk i tid.</p>
+
+      <p>Med stigande ålder förändras metabolismen.<br>
+      Blodtrycket stiger gradvis.<br>
+      Blodsockret reagerar långsammare.<br>
+      Kolesterolet förskjuts.</p>
+
+      <p>Detta är inte diagnoser.<br>
+      Det är signaler.</p>
+
+      <p>De går att mäta.<br>
+      Med blodtrycksmanschett.<br>
+      Med några välvalda prover.</p>
+
+      <p>Resultaten tolkas tillsammans med läkare.<br>
+      Inte som isolerade siffror,<br>
+      utan som en sammanhängande bild.</p>
+
+      <p>Utifrån det fattas beslut.<br>
+      Om kost.<br>
+      Om träning.<br>
+      Om återhämtning.<br>
+      Ibland om läkemedel.</p>
+
+      <p>Uppföljning kan ske via din vårdcentral<br>
+      eller genom <strong>ælab</strong>.</p>
+
+      <p>Detta är preventiv medicin i praktiken.</p>
+
+      <p>Att ligga steget före.<br>
+      Med data.<br>
+      Med eftertanke.<br>
+      Med ansvar.</p>
+    </section>
+  </main>
+</body>
+</html>
