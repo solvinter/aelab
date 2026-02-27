@@ -13,10 +13,15 @@
 
 *{ box-sizing:border-box; }
 
+html, body{
+  height:100%;
+}
+
 body{
   margin:0;
-  min-height:100vh;
-  overflow:hidden;
+  min-height:100svh;
+  overflow-x:hidden;
+  overflow-y:auto;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   color:var(--fg);
   background:
@@ -40,11 +45,11 @@ h1{
 .stage{
   position:relative;
   width:100%;
-  height:100vh;
+  min-height:100svh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:0 clamp(16px, 6vw, 96px);
+  padding:20px;
 }
 
 .bubble{
@@ -128,6 +133,32 @@ h1{
   color:var(--fg);
 }
 .back:hover{ opacity:0.9; }
+@media (max-width: 600px){
+
+  .bubble{
+    width:clamp(220px, 72vw, 320px);
+  }
+
+  .stack{
+    padding:0 18px;
+  }
+
+  .brand{
+    font-size:0.85rem;
+    max-width:14ch;
+  }
+
+  .soon{
+    font-size:1rem;
+    max-width:14ch;
+  }
+
+  .note{
+    font-size:0.85rem;
+    max-width:16ch;
+  }
+
+}
 </style>
 </head>
 

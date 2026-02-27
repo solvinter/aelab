@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ælab – Kontakt</title>
+<title>MetabolismX – Hur</title>
 
 <style>
 :root{
@@ -12,6 +12,10 @@
 }
 
 *{ box-sizing:border-box; }
+
+html, body{
+  height:100%;
+}
 
 body{
   margin:0;
@@ -50,9 +54,8 @@ h1{
 
 .bubble{
   position:relative;
-  width:clamp(120px, 34vw, 320px);
+  width:clamp(160px, 44vw, 420px);
   aspect-ratio:1/1;
-  padding:20px;
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -87,14 +90,26 @@ h1{
   backdrop-filter: blur(14px);
 }
 
-.email{
-  letter-spacing:0.06em;
-  font-weight:400;
-  opacity:0.92;
-  font-size:clamp(0.95rem, 2.6vw, 1.15rem);
-  padding:0 18px;
+.stack{
   text-align:center;
-  line-height:1.2;
+  padding:0 18px;
+}
+
+.brand{
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-size:0.95rem;
+  opacity:0.85;
+}
+
+.note{
+  margin-top:12px;
+  font-size:0.95rem;
+  opacity:0.65;
+  line-height:1.35;
+  max-width:26ch;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .back{
@@ -109,18 +124,55 @@ h1{
   text-decoration:none;
   color:var(--fg);
 }
-
 .back:hover{ opacity:0.9; }
+@media (max-width: 600px){
+
+  .bubble{
+    width:clamp(220px, 72vw, 320px);
+  }
+
+  .stack{
+    padding:0 18px;
+  }
+
+  .brand{
+    font-size:0.85rem;
+    max-width:14ch;
+  }
+
+  .note{
+    font-size:0.85rem;
+    max-width:16ch;
+  }
+
+}
 </style>
 </head>
 
 <body>
-  <h1>Ælab</h1>
+  <h1>MetabolismX</h1>
 
   <main class="stage">
-    <a class="bubble" href="mailto:hello@aelab.se" aria-label="Maila hello@aelab.se">
-      <div class="email">hello@aelab.se</div>
-    </a>
+    <div class="bubble" role="img" aria-label="Hur">
+      <div class="stack">
+        <div class="brand">Hur</div>
+        <div class="note">
+          Med ett fåtal relevanta prover.
+          Tolkade tillsammans.
+          <br><br>
+          Det krävs sällan avancerade utredningar
+          för att förstå de mest betydelsefulla riskmarkörerna.
+          <br><br>
+          Resultaten kan diskuteras med din ordinarie läkare
+          eller inom ælab –
+          för att avgöra om livsstilsjusteringar
+          eller förebyggande läkemedel är motiverade.
+          <br><br>
+          Målet är inte optimering.
+          Målet är integritet.
+        </div>
+      </div>
+    </div>
   </main>
 
   <a class="back" href="index.html">Tillbaka</a>
