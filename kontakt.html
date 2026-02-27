@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ælab</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ælab – Kontakt</title>
 
 <style>
 :root{
@@ -15,10 +15,10 @@
 
 body{
   margin:0;
-  height:100vh;
+  min-height:100vh;
+  overflow:hidden;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   color:var(--fg);
-
   background:
     radial-gradient(circle at 20% 30%, rgba(46,168,255,0.12), transparent 45%),
     radial-gradient(circle at 80% 40%, rgba(29,211,176,0.12), transparent 50%),
@@ -33,29 +33,30 @@ h1{
   transform:translateX(-50%);
   font-weight:400;
   letter-spacing:0.15em;
-  font-size:0.9rem;
+  font-size:1rem;
   opacity:0.6;
 }
 
 .stage{
-  height:100%;
-  display:grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items:center;
-  justify-items:center;
-  padding:0 clamp(40px, 8vw, 140px);
-}
-
-.bubble{
-  width:clamp(100px, 22vw, 240px);
-  aspect-ratio:1/1;
-  border-radius:50%;
-  text-decoration:none;
-  color:inherit;
+  position:relative;
+  width:100%;
+  height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:transform .25s ease;
+  padding:0 clamp(16px, 6vw, 96px);
+}
+
+.bubble{
+  position:relative;
+  width:clamp(120px, 34vw, 320px);
+  aspect-ratio:1/1;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:inherit;
 
   background:
     radial-gradient(circle at 30% 26%,
@@ -84,41 +85,42 @@ h1{
   backdrop-filter: blur(14px);
 }
 
-.bubble span{
+.email{
+  letter-spacing:0.06em;
+  font-weight:400;
+  opacity:0.92;
+  font-size:clamp(0.95rem, 2.6vw, 1.15rem);
+  padding:0 18px;
+  text-align:center;
+  line-height:1.2;
+}
+
+.back{
+  position:fixed;
+  bottom:26px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:0.9rem;
+  letter-spacing:0.12em;
   text-transform:uppercase;
-  letter-spacing:0.18em;
-  font-size:0.85rem;
-  opacity:0.85;
+  opacity:0.65;
+  text-decoration:none;
+  color:var(--fg);
 }
 
-.bubble:hover{
-  transform:scale(1.04);
-}
-
-/* Kontakt subtilt markerad, inte glödande */
-.bubble.contact{
-  border:1px solid rgba(255,255,255,0.24);
-}
-
-@media (max-width: 720px){
-  .stage{
-    grid-template-columns:1fr;
-    gap:28px;
-    padding:80px 40px;
-  }
-}
+.back:hover{ opacity:0.9; }
 </style>
 </head>
 
 <body>
+  <h1>Ælab</h1>
 
-<h1>Ælab</h1>
+  <main class="stage">
+    <a class="bubble" href="mailto:hello@aelab.se" aria-label="Maila hello@aelab.se">
+      <div class="email">hello@aelab.se</div>
+    </a>
+  </main>
 
-<div class="stage">
-  <a class="bubble" href="vad.html"><span>Vad</span></a>
-  <a class="bubble contact" href="kontakt.html"><span>Kontakt</span></a>
-  <a class="bubble" href="hur.html"><span>Hur</span></a>
-</div>
-
+  <a class="back" href="index.html">Tillbaka</a>
 </body>
 </html>

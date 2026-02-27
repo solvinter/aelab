@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ælab</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MetabolismX – Coming soon</title>
 
 <style>
 :root{
@@ -15,10 +15,10 @@
 
 body{
   margin:0;
-  height:100vh;
+  min-height:100vh;
+  overflow:hidden;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   color:var(--fg);
-
   background:
     radial-gradient(circle at 20% 30%, rgba(46,168,255,0.12), transparent 45%),
     radial-gradient(circle at 80% 40%, rgba(29,211,176,0.12), transparent 50%),
@@ -33,29 +33,30 @@ h1{
   transform:translateX(-50%);
   font-weight:400;
   letter-spacing:0.15em;
-  font-size:0.9rem;
+  font-size:1rem;
   opacity:0.6;
 }
 
 .stage{
-  height:100%;
-  display:grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items:center;
-  justify-items:center;
-  padding:0 clamp(40px, 8vw, 140px);
-}
-
-.bubble{
-  width:clamp(100px, 22vw, 240px);
-  aspect-ratio:1/1;
-  border-radius:50%;
-  text-decoration:none;
-  color:inherit;
+  position:relative;
+  width:100%;
+  height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  transition:transform .25s ease;
+  padding:0 clamp(16px, 6vw, 96px);
+}
+
+.bubble{
+  position:relative;
+  width:clamp(160px, 44vw, 420px);
+  aspect-ratio:1/1;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:inherit;
 
   background:
     radial-gradient(circle at 30% 26%,
@@ -84,41 +85,65 @@ h1{
   backdrop-filter: blur(14px);
 }
 
-.bubble span{
+.stack{
+  text-align:center;
+  padding:0 18px;
+}
+
+.brand{
   text-transform:uppercase;
   letter-spacing:0.18em;
-  font-size:0.85rem;
+  font-size:0.95rem;
   opacity:0.85;
 }
 
-.bubble:hover{
-  transform:scale(1.04);
+.soon{
+  margin-top:10px;
+  font-size:clamp(1.1rem, 3.6vw, 1.6rem);
+  letter-spacing:0.08em;
+  font-weight:400;
+  opacity:0.92;
 }
 
-/* Kontakt subtilt markerad, inte glödande */
-.bubble.contact{
-  border:1px solid rgba(255,255,255,0.24);
+.note{
+  margin-top:12px;
+  font-size:0.95rem;
+  opacity:0.65;
+  line-height:1.35;
+  max-width:26ch;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-@media (max-width: 720px){
-  .stage{
-    grid-template-columns:1fr;
-    gap:28px;
-    padding:80px 40px;
-  }
+.back{
+  position:fixed;
+  bottom:26px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:0.9rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.65;
+  text-decoration:none;
+  color:var(--fg);
 }
+.back:hover{ opacity:0.9; }
 </style>
 </head>
 
 <body>
+  <h1>Ælab</h1>
 
-<h1>Ælab</h1>
+  <main class="stage">
+    <div class="bubble" role="img" aria-label="MetabolismX kommer snart">
+      <div class="stack">
+        <div class="brand">MetabolismX</div>
+        <div class="soon">Coming soon</div>
+        <div class="note">Ett litet referensbibliotek och en karta för prevention.</div>
+      </div>
+    </div>
+  </main>
 
-<div class="stage">
-  <a class="bubble" href="vad.html"><span>Vad</span></a>
-  <a class="bubble contact" href="kontakt.html"><span>Kontakt</span></a>
-  <a class="bubble" href="hur.html"><span>Hur</span></a>
-</div>
-
+  <a class="back" href="index.html">Tillbaka</a>
 </body>
 </html>

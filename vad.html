@@ -1,119 +1,190 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ælab - Vad</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ælab — Vad</title>
+
 <style>
-:root {
-  --bg: #0c1117;
-  --fg: #eaf6f5;
-  --panel: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.16);
+:root{
+  --bg:#0c1117;
+  --fg:#eaf6f5;
+  --muted: rgba(234,246,245,0.72);
+  --card: rgba(255,255,255,0.06);
+  --line: rgba(255,255,255,0.14);
+  --amber: 255,179,71;
 }
+*{ box-sizing:border-box; }
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: var(--fg);
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--fg);
   background:
-    radial-gradient(circle at 20% 30%, rgba(46,168,255,0.12), transparent 45%),
-    radial-gradient(circle at 80% 40%, rgba(29,211,176,0.12), transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(255,179,71,0.08), transparent 55%),
+    radial-gradient(circle at 20% 30%, rgba(var(--amber),0.10), transparent 45%),
+    radial-gradient(circle at 80% 40%, rgba(var(--amber),0.08), transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(var(--amber),0.09), transparent 55%),
     var(--bg);
 }
 
-.wrap {
-  width: min(760px, calc(100% - 2rem));
-  margin: 48px auto;
+header{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 44px 20px 14px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand a{
+  color:var(--fg);
+  text-decoration:none;
+  opacity:0.78;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-size:0.85rem;
+}
+nav{ display:flex; gap:14px; }
+nav a{
+  color:var(--fg);
+  text-decoration:none;
+  opacity:0.72;
+  font-size:0.95rem;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid transparent;
+}
+nav a:hover{
+  opacity:0.95;
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
 }
 
-.back {
-  color: var(--fg);
-  text-decoration: none;
-  opacity: 0.8;
-  font-size: 0.92rem;
-  letter-spacing: 0.02em;
+main{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 10px 20px 70px;
 }
 
-.back:hover { opacity: 1; }
-
-.card {
-  margin-top: 18px;
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: clamp(20px, 3vw, 34px);
-  background: var(--panel);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.35);
+h1{
+  font-weight:500;
+  letter-spacing:0.02em;
+  margin: 18px 0 10px;
+  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
 }
 
-h1 {
-  margin: 0 0 20px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+.lead{
+  color:var(--muted);
+  line-height:1.65;
+  font-size:1.05rem;
+  margin: 0 0 18px;
 }
 
-p {
-  margin: 0 0 14px;
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  margin-top: 14px;
+  backdrop-filter: blur(12px);
+}
+.card h2{
+  margin:0 0 8px;
+  font-weight:500;
+  font-size:1.05rem;
+  letter-spacing:0.01em;
+}
+.card p{
+  margin: 0 0 10px;
+  color: var(--muted);
   line-height: 1.65;
-  opacity: 0.95;
 }
 
-p:last-child { margin-bottom: 0; }
+.ctaRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top: 12px;
+}
 
-strong { font-weight: 600; }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-decoration:none;
+  color: var(--fg);
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.05);
+}
+.btn:hover{
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.20);
+}
+.btn.primary{
+  border-color: rgba(var(--amber),0.35);
+  box-shadow:
+    0 0 22px rgba(var(--amber),0.16),
+    0 0 56px rgba(var(--amber),0.10);
+}
+
+footer{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px 28px;
+  color: rgba(234,246,245,0.55);
+  font-size: 0.9rem;
+}
 </style>
 </head>
+
 <body>
-  <main class="wrap">
-    <a class="back" href="index.html">← Tillbaka</a>
-    <section class="card">
-      <h1>Vad</h1>
+<header>
+  <div class="brand">
+    <a href="index.html">Ælab</a>
+    <nav>
+      <a href="vad.html" style="opacity:0.95; border-color: rgba(255,255,255,0.14); background: rgba(255,255,255,0.04);">Vad</a>
+      <a href="hur.html">Hur</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-      <p>För dig som fått ett visitkort från <strong>ælab</strong>.</p>
+<main>
+  <h1>Vad</h1>
+  <p class="lead">
+    Ælab handlar om preventiv medicin: att förstå riktning tidigt och göra en lugn, klinisk tolkning av några få centrala markörer — i sammanhang.
+  </p>
 
-      <p>Detta är en inbjudan till en pilot.</p>
+  <div class="card">
+    <h2>Preventiv medicin, kort och praktiskt</h2>
+    <p>
+      I stället för att vänta tills något passerar en administrativ gräns, tittar vi på mönster över tid:
+      vad som är stabilt, vad som glider, och vad som är rimligt att påverka.
+    </p>
 
-      <p>Inte för att behandla sjukdom.<br>
-      Utan för att förstå risk i tid.</p>
+    <!-- ✅ Knapp till MetabolismX direkt under VAD -->
+    <div class="ctaRow">
+      <!-- Byt href till din faktiska MetabolismX-länk när du vill -->
+      <a class="btn primary" href="metabolismx.html">MetabolismX (kort)</a>
+    </div>
+  </div>
 
-      <p>Med stigande ålder förändras metabolismen.<br>
-      Blodtrycket stiger gradvis.<br>
-      Blodsockret reagerar långsammare.<br>
-      Kolesterolet förskjuts.</p>
+  <div class="card">
+    <h2>Inget stort system — bara tydlighet</h2>
+    <p>
+      Det här är inte en app och inte ett “program”.
+      Det är en enkel väg till bättre överblick och ett bättre samtal om risk, prevention och vitalitet.
+    </p>
+  </div>
+</main>
 
-      <p>Detta är inte diagnoser.<br>
-      Det är signaler.</p>
-
-      <p>De går att mäta.<br>
-      Med blodtrycksmanschett.<br>
-      Med några välvalda prover.</p>
-
-      <p>Resultaten tolkas tillsammans med läkare.<br>
-      Inte som isolerade siffror,<br>
-      utan som en sammanhängande bild.</p>
-
-      <p>Utifrån det fattas beslut.<br>
-      Om kost.<br>
-      Om träning.<br>
-      Om återhämtning.<br>
-      Ibland om läkemedel.</p>
-
-      <p>Uppföljning kan ske via din vårdcentral<br>
-      eller genom <strong>ælab</strong>.</p>
-
-      <p>Detta är preventiv medicin i praktiken.</p>
-
-      <p>Att ligga steget före.<br>
-      Med data.<br>
-      Med eftertanke.<br>
-      Med ansvar.</p>
-    </section>
-  </main>
+<footer>
+  © Ælab
+</footer>
 </body>
 </html>
