@@ -5,124 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ælab – Kontakt</title>
 
-<style>
-:root{
-  --bg:#0c1117;
-  --fg:#eaf6f5;
-}
-
-*{ box-sizing:border-box; }
-
-body{
-  margin:0;
-  min-height:100svh;
-  overflow-x:hidden;
-  overflow-y:auto;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  color:var(--fg);
-  background:
-    radial-gradient(circle at 20% 30%, rgba(46,168,255,0.12), transparent 45%),
-    radial-gradient(circle at 80% 40%, rgba(29,211,176,0.12), transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(255,179,71,0.08), transparent 55%),
-    var(--bg);
-}
-
-h1{
-  position:fixed;
-  top:40px;
-  left:50%;
-  transform:translateX(-50%);
-  font-weight:400;
-  letter-spacing:0.15em;
-  font-size:1rem;
-  opacity:0.6;
-}
-
-.stage{
-  position:relative;
-  width:100%;
-  min-height:100svh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.bubble{
-  position:relative;
-  width:clamp(120px, 34vw, 320px);
-  aspect-ratio:1/1;
-  padding:20px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  color:inherit;
-
-  background:
-    radial-gradient(circle at 30% 26%,
-      rgba(255,255,255,0.22) 0%,
-      rgba(255,255,255,0.16) 10%,
-      rgba(255,255,255,0.08) 24%,
-      transparent 48%),
-    radial-gradient(circle at 18% 18%,
-      rgba(255,255,255,0.10) 0%,
-      transparent 55%),
-    radial-gradient(circle at 70% 72%,
-      rgba(0,0,0,0.30) 0%,
-      transparent 66%),
-    radial-gradient(circle at 50% 50%,
-      rgba(255,255,255,0.05) 0%,
-      rgba(255,255,255,0.02) 62%,
-      transparent 100%);
-
-  border:1px solid rgba(255,255,255,0.18);
-
-  box-shadow:
-    inset -14px -20px 40px rgba(0,0,0,0.35),
-    inset 14px 18px 25px rgba(255,255,255,0.08),
-    0 50px 70px -15px rgba(0,0,0,0.55);
-
-  backdrop-filter: blur(14px);
-}
-
-.email{
-  letter-spacing:0.06em;
-  font-weight:400;
-  opacity:0.92;
-  font-size:clamp(0.95rem, 2.6vw, 1.15rem);
-  padding:0 18px;
-  text-align:center;
-  line-height:1.2;
-}
-
-.back{
-  position:fixed;
-  bottom:26px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:0.9rem;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  opacity:0.65;
-  text-decoration:none;
-  color:var(--fg);
-}
-
-.back:hover{ opacity:0.9; }
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <h1>Ælab</h1>
+  <header class="site-header">
+    <div class="brand">
+      <a class="brand-mark" href="index.html">Ælab</a>
+      <nav class="site-nav">
+        <a href="vad.html">Vad</a>
+        <a href="hur.html">Hur</a>
+        <a class="is-active" href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-  <main class="stage">
-    <a class="bubble" href="mailto:hello@aelab.se" aria-label="Maila hello@aelab.se">
-      <div class="email">hello@aelab.se</div>
-    </a>
+  <main class="page">
+    <h1>Kontakt</h1>
+    <p class="lead">
+      Om du vill inleda ett samtal om preventiv medicin, risk eller hur upplägget kan passa dig, börjar vi här.
+    </p>
+
+    <div class="card">
+      <h2>Maila direkt</h2>
+      <p>
+        Det enklaste sättet att nå Ælab är att skriva ett kort mail. Beskriv gärna vad du vill förstå bättre eller vilken typ av samtal du söker.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:hello@aelab.se">hello@aelab.se</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Låg tröskel</h2>
+      <p>
+        Det här är tänkt att vara ett lugnt första steg, inte ett stort åtagande. Ofta räcker det att börja med en fråga och ett första resonemang.
+      </p>
+    </div>
   </main>
 
-  <a class="back" href="index.html">Tillbaka</a>
+  <footer class="site-footer">
+    © Ælab
+  </footer>
 </body>
 </html>
