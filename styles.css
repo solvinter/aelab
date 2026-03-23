@@ -30,6 +30,7 @@ body{
 
 a{
   color:inherit;
+  text-decoration:none;
 }
 
 .site-header{
@@ -146,6 +147,22 @@ h1{
 
 .card p:last-child{
   margin-bottom:0;
+}
+
+.editorial-link,
+.editorial-link:any-link,
+.editorial-link:visited,
+.editorial-link:hover,
+.editorial-link:focus,
+.editorial-link:active{
+  color:rgba(234,246,245,0.82);
+  text-decoration:none;
+  opacity:1;
+}
+
+.editorial-link:hover,
+.editorial-link:focus{
+  opacity:0.86;
 }
 
 .small{
